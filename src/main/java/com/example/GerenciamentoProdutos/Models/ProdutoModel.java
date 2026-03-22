@@ -1,19 +1,18 @@
 package com.example.GerenciamentoProdutos;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-
-@Entity
+@Entity(name = "Produto")
+@Table(name = "tb_produto")
 public class ProdutoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_produto")
     private Long id;
+    @Column(name = "nome_produto")
     private String nome;
     private BigDecimal preco;
     private Integer estoque;
